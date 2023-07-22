@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Bem-vindo!";
+}
+<div class="container">
+    <div class="welcome-text hide">
+        <h1 class="welcome-text" id="text-appears"><img src="~/Images/pizza-welcome-view.png" />Pizzaria<img src="~/Images/pizza-welcome-view.png" /></h1>
+    </div>
+</div>
+   
+
+
+<script>
+    setTimeout(function () {
+        window.location.href = '/Home/Index'; // Redireciona para a rota controlada pelo HomeController
+    }, 4000);
+</script>
