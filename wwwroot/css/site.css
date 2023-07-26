@@ -21,6 +21,7 @@ html {
 body {
     margin-bottom: 60px;
     overflow-x: hidden;
+    background-color: #F9F9FB;
 }
 
 .welcome-text {
@@ -40,7 +41,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .welcome-text img{
+    .welcome-text img {
         display: flex;
         flex-direction: row;
         width: 12rem;
@@ -75,9 +76,12 @@ body {
 }
 
 .hide {
-    animation: fadeOut 1s ease-in-out forwards 2.5s;
+    animation: fadeOut 1s ease-in-out forwards 1s;
 }
 /**/
+
+
+
 
 .row{
     width: 100%;
@@ -98,48 +102,80 @@ body {
     width: 210px;
     height: 150px;
 }
-@media (orientation: portrait) {
-    .welcome-text {
-        font-size: 5rem;
-        margin: 0;
+
+@media (orientation: landscape) {
+    .index-title {
         font-family: 'Great Vibes', cursive;
         color: #ce0000;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 30vw;
+        background-color: rgba(233, 228, 231, 0.2);
     }
 
-        .welcome-text h1 {
+        .index-title h1 {
+            font-size: 7rem;
             margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            justify-content: center;
         }
-        .welcome-text img {
+
+        .index-title img {
             display: flex;
             flex-direction: row;
-            width: 3rem;
-            height: 3rem;
+            width: 4rem;
+            height: 4rem;
             padding: 0.5rem;
         }
-}
 
-@media (orientation: landscape) {
-    .banner {
-        background-image: url("../Images/pizza_banner.jpg");
-        height: 25rem;
-        text-align: center;
-        box-shadow: 0.3rem 0.3rem 0.4rem #CBCED6, -0.3rem -0.3rem 0.4rem white;
-    }
 }
+    @media (orientation: portrait) {
+        .welcome-text {
+            font-size: 5rem;
+            margin: 0;
+            font-family: 'Great Vibes', cursive;
+            color: #ce0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-@media (orientation: portrait) {
-    .banner {
-        background-image: url("../Images/pizza_banner_mobile.jpg");
-        height: 15rem;
-        text-align: center;
-        box-shadow: 0.3rem 0.3rem 0.4rem #CBCED6, -0.3rem -0.3rem 0.4rem white;
+            .welcome-text h1 {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .welcome-text img {
+                display: flex;
+                flex-direction: row;
+                width: 3rem;
+                height: 3rem;
+                padding: 0.5rem;
+            }
+
+        .index-title {
+            font-family: 'Great Vibes', cursive;
+            color: #ce0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(233, 228, 231, 0.2);
+        }
+
+            .index-title h1 {
+                font-size: 4.3rem;
+                margin: 0;
+                justify-content: center;
+            }
+
+            .index-title img {
+                display: flex;
+                flex-direction: row;
+                width: 3rem;
+                height: 3rem;
+                padding: 0.5rem;
+            }
     }
-}
-    
