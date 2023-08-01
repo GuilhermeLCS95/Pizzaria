@@ -2,8 +2,8 @@
 {
     public enum PizzaSizeEnum
     {
-        P,
-        M,
-        G,
+        P = 1,
+        M = 2,
+        G = 3,
     }
 }

@@ -1,0 +1,29 @@
+﻿@model List<PizzaModel>
+@using Pizzaria.Enums;
+@{
+    ViewData["Title"] = "Listagem de pizzas";
+}
+<div class="text-center subtitle">
+    <p>Pizzas salgadas</p>
+</div>
+<div class="row">
+    @if(Model != null && Model.Any())
+    {
+        foreach(var pizzaSalgada in Model)
+        {
+            <div class="card" style="width: 15rem;" @pizzaSalgada.Id>
+                <img src="@pizzaSalgada.PizzaImg" class="card-img-top" alt="sabor pizza">
+                <div class="card-body">
+                    <h5 class="card-title">@pizzaSalgada.PizzaFlavor</h5>
+                    <p class="card-text">R$ @pizzaSalgada.Price</p>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <a role="button" class="btn btn-primary" asp-route-id="@pizzaSalgada.Id" asp-controller="Pizza" asp-action="Update">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-route-id="@pizzaSalgada.Id" asp-controller="Pizza" asp-action="DeleteConfirmation">Excluir</a>
+                </div>
+                
+            </div>
+            
+        }
+    }
+</div>

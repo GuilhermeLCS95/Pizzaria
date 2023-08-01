@@ -14,7 +14,7 @@ namespace Pizzaria.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
             return View();
         }
 

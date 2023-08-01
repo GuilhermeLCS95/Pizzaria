@@ -68,6 +68,7 @@ button.accept-policy[b-8fdrl6gios] {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 2rem;
     }
 
 
@@ -85,17 +86,17 @@ button.accept-policy[b-8fdrl6gios] {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 2rem;
     }
 }
-    
+
 
 
 footer[b-8fdrl6gios] {
-    position: absolute;
-    bottom: 0;
+    position: static;
     width: 100%;
-    white-space: nowrap;
-    line-height: 60px;
+    bottom: 0;
+    height: 4rem;
     background: rgb(219,162,74);
     background: linear-gradient(180deg, rgba(219,162,74,1) 22%, rgba(255,250,138,1) 100%);
 }

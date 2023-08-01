@@ -1,0 +1,8 @@
+﻿@model PizzaModel
+@{
+}
+<div class="text-center">
+    <h1>Você tem certeza que deseja excluir a pizza de @Model.PizzaFlavor.ToLower()?</h1>
+</div>
+    <a role="button" class="btn btn-primary w-100" asp-controller="Pizza" asp-action="Index">Cancelar</a>
+    <a role="button" class="btn btn-danger w-100" asp-controller="Pizza" asp-route-id="@Model.Id" asp-action="Delete">Excluir</a>

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pizzaria.Data;
+using Pizzaria.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<BancoContext>(item => item.UseSqlServer(configuration.GetConnectionString("DataBase")));
+builder.Services.AddScoped<IPizzaRepository, PizzaRepository>();
 
 var app = builder.Build();
 

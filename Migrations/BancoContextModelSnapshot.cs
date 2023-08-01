@@ -29,11 +29,19 @@ namespace Pizzaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("FlavorsEnum")
-                        .HasColumnType("int");
+                    b.Property<string>("PizzaFlavor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PizzaImg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<int>("SaltySweetEnum")
+                        .HasColumnType("int");
 
                     b.Property<int>("SizeEnum")
                         .HasColumnType("int");
