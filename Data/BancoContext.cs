@@ -9,5 +9,6 @@ namespace Pizzaria.Data
 
         }
         public DbSet<PizzaModel> Pizzas { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }

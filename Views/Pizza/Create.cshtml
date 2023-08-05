@@ -8,27 +8,35 @@
 <form asp-controller="Pizza" asp-action="Create" method="post">
     <div class="mb-3">
         <label for="pizzaFlavor" class="form-label">Sabor</label>
-        <input type="text" asp-for="PizzaFlavor" class="form-control">
+        <input type="text" asp-for="PizzaFlavor" class="form-control w-25">
+        @Html.ValidationMessageFor(x => x.PizzaFlavor)
     </div>
     <div class="mb-3">
         <label for="pizzaImg" class="form-label">URL da imagem</label>
-        <input type="text" asp-for="PizzaImg" class="form-control">
+        <input type="text" asp-for="PizzaImg" class="form-control w-25">
+        @Html.ValidationMessageFor(x => x.PizzaImg)
     </div>
-
-    <select class="form-select" asp-for="SizeEnum">
-        <option selected>Selecione o tamanho da pizza</option>
-        <option value="@PizzaSizeEnum.P">Pequena</option>
-        <option value="@PizzaSizeEnum.M">Média</option>
-        <option value="@PizzaSizeEnum.G">Grande</option>
-    </select>
-    <select class="form-select" asp-for="SaltySweetEnum">
-        <option selected>A pizza é salgada ou doce?</option>
-        <option value="@SaltySweetEnum.Salgada">Salgada</option>
-        <option value="@SaltySweetEnum.Doce">Doce</option>
-    </select>
+    <div class="mb-3">
+        <select class="form-select w-25" asp-for="SizeEnum">
+            <option selected>Selecione o tamanho da pizza</option>
+            <option value="@PizzaSizeEnum.P">Pequena</option>
+            <option value="@PizzaSizeEnum.M">Média</option>
+            <option value="@PizzaSizeEnum.G">Grande</option>          
+        </select>
+        @Html.ValidationMessageFor(x => x.SizeEnum)
+    </div>
+    <div class="mb-3">
+        <select class="form-select w-25" asp-for="SaltySweetEnum">
+            <option selected>A pizza é salgada ou doce?</option>
+            <option value="@SaltySweetEnum.Salgada">Salgada</option>
+            <option value="@SaltySweetEnum.Doce">Doce</option>           
+        </select>
+        @Html.ValidationMessageFor(x => x.SaltySweetEnum)
+    </div>  
     <div class="mb-3">
         <label for="price" class="form-label">Preço</label>
-        <input type="number" asp-for="Price" class="form-control">
+        <input type="number" asp-for="Price" class="form-control w-25">
+        @Html.ValidationMessageFor(x => x.Price)
     </div>
     <button type="submit" class="btn btn-primary">Precificar</button>
     

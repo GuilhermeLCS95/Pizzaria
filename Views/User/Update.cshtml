@@ -1,0 +1,17 @@
+﻿@model UserModel;
+
+@{
+    ViewData["Title"] = "Atualizar usuário";
+}
+<form asp-controller="Pizza" asp-action="Update" method="post">
+    <div class="mb-3">
+        <label for="UserName" class="form-label">Digite seu nome: </label>
+        <input type="text" asp-for="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Digite seu e-mail: </label>
+        <input type="email" asp-for="Email" class="form-control">
+    </div>
+    <button type="submit" asp-route-id="@Model.Id" class="btn btn-primary">Alterar</button>
+
+</form>

@@ -39,14 +39,40 @@ namespace Pizzaria.Controllers
         [HttpPost]
         public IActionResult Create(PizzaModel pizza)
         {
-            _pizzaRepository.Add(pizza);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _pizzaRepository.Add(pizza);
+                    TempData["SucessMessage"] = "Pizza registrada com sucesso!";
+                    return RedirectToAction("Index");
+                }
+                return View(pizza);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Falha ao registrar a pizzar" + ex.Message;
+                return RedirectToAction("Index");
+            }
         }
         [HttpPost]
         public IActionResult Update(PizzaModel pizza)
         {
-            _pizzaRepository.Update(pizza);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _pizzaRepository.Update(pizza);
+                    TempData["SucessMessage"] = "Pizza atualizada com sucesso!";
+                    return RedirectToAction("Index");
+                }
+                return View(pizza);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Falha ao atualizar as informações da pizza " + ex.Message;
+                return RedirectToAction("Index");
+            }
         }
     }
 }

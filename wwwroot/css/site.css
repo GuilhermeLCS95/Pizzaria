@@ -21,6 +21,9 @@ html {
 body {
     overflow-x: hidden;
     background-color: #F9F9FB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome-text {
@@ -178,3 +181,15 @@ body {
                 padding: 0.5rem;
             }
     }
+
+.field-validation-error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.btn-close {
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    border-radius: 50% !important;
+}
