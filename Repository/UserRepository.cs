@@ -1,6 +1,5 @@
 ﻿using Pizzaria.Data;
 using Pizzaria.Enums;
-using Pizzaria.Migrations;
 using Pizzaria.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -13,6 +12,12 @@ namespace Pizzaria.Repository
         {
             _bancoContext = bancoContext;
         }
+
+        public UserModel SearchForLogin(string email)
+        {
+            return _bancoContext.Users.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
+        }
+
         public UserModel GetId(int id)
         {
             return _bancoContext.Users.FirstOrDefault(x => x.Id == id);    
@@ -23,6 +28,7 @@ namespace Pizzaria.Repository
         }
         public UserModel Add(UserModel user)
         {
+            user.RegisterDate = DateTime.Now;
             _bancoContext.Users.Add(user);
             _bancoContext.SaveChanges();
             return user;
@@ -34,14 +40,14 @@ namespace Pizzaria.Repository
             UserModel userDB = GetId(user.Id);
             if (userDB == null)
             {
-                throw new Exception("Erro ao atualizar informações da pizza.");
+                throw new Exception("Erro ao atualizar informações do usuário.");
             }
             else
             {
+                userDB.EditDate = DateTime.Now;
                 userDB.Name = user.Name;
                 userDB.Email = user.Email;
-          
-
+               
                 _bancoContext.Users.Update(userDB);
                 _bancoContext.SaveChanges();
 
@@ -64,5 +70,7 @@ namespace Pizzaria.Repository
                 return true;
             }
         }
+
+       
     }
 }

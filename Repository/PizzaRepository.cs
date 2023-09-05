@@ -1,6 +1,5 @@
 ﻿using Pizzaria.Data;
 using Pizzaria.Enums;
-using Pizzaria.Migrations;
 using Pizzaria.Models;
 using System.ComponentModel.DataAnnotations;
 

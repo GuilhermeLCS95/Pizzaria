@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pizzaria.Models;
 using Pizzaria.Repository;
+using System.Linq.Expressions;
 
 namespace Pizzaria.Controllers
 {
@@ -23,7 +24,7 @@ namespace Pizzaria.Controllers
         }
         public IActionResult Update(int id)
         {
-           UserModel user = _userRepository.GetId(id);
+            UserModel user = _userRepository.GetId(id);
             return View(user);
         }
         public IActionResult DeleteConfirmation(int id)
@@ -31,10 +32,27 @@ namespace Pizzaria.Controllers
             UserModel user = _userRepository.GetId(id);
             return View(user);
         }
-        public IActionResult Delete(int id) 
+        public IActionResult Delete(int id)
         {
-            _userRepository.Delete(id);
-            return RedirectToAction("Index");
+            try
+            {
+                bool deleted = _userRepository.Delete(id);
+                if (deleted)
+                {
+                    TempData["SucessMessage"] = "Usuário excluído com sucesso";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Falha ao excluir usuário.";
+                }
+                return RedirectToAction("Index");
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = "Failed to delete this user. " + ex.Message;
+                return RedirectToAction("Index");
+            }          
+            
         }
         [HttpPost]
         public IActionResult Create(UserModel user)
@@ -54,27 +72,36 @@ namespace Pizzaria.Controllers
                 TempData["ErrorMessage"] = "Falha ao registrar" + ex.Message;
                 return RedirectToAction("Index");
             }
-            
+
         }
+
+
         [HttpPost]
-        public IActionResult Update(UserModel user)
+        public IActionResult Update(UserWithoutPassword userWithoutPassword)
         {
             try
             {
+                UserModel user = null;
                 if (ModelState.IsValid)
                 {
-                    _userRepository.Update(user);
-                    TempData["SucessMessage"] = "Usuário atualizado com sucesso!";
+                    user = new UserModel()
+                    {
+                        Id = userWithoutPassword.Id,
+                        Name = userWithoutPassword.Name,
+                        Email = userWithoutPassword.Email,
+                        Phone = userWithoutPassword.Phone,
+                    };
+                    user = _userRepository.Update(user);
+                    TempData["SucessMessage"] = "As informações do usuário foram atualizadas";
                     return RedirectToAction("Index");
                 }
                 return View(user);
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = "Falha ao atualizar as informações do usuário " + ex.Message;
+                TempData["ErrorMessage"] = "Houve uma falha ao atualizar as informações do usuário " + ex.Message;
                 return RedirectToAction("Index");
             }
-            
         }
     }
 }

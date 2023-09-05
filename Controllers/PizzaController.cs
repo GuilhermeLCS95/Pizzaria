@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pizzaria.Models;
 using Pizzaria.Repository;
+using System.Linq.Expressions;
 
 namespace Pizzaria.Controllers
 {
@@ -33,8 +34,25 @@ namespace Pizzaria.Controllers
         }
         public IActionResult Delete(int id) 
         {
-            _pizzaRepository.Delete(id);
-            return RedirectToAction("Index");
+            try
+            {
+                bool deleted = _pizzaRepository.Delete(id);
+                if (deleted)
+                {
+                    TempData["SucessMessage"] = "Pizza excluída com sucesso!";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Falha ao excluir a pizzar";
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Falha ao registrar a pizzar" + ex.Message;
+                return RedirectToAction("Index");
+            }
+                       
         }
         [HttpPost]
         public IActionResult Create(PizzaModel pizza)

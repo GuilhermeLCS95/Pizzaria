@@ -3,15 +3,22 @@
 @{
     ViewData["Title"] = "Atualizar usuário";
 }
-<form asp-controller="Pizza" asp-action="Update" method="post">
+<form asp-controller="User" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
     <div class="mb-3">
-        <label for="UserName" class="form-label">Digite seu nome: </label>
+        <label for="UserName" class="form-label">Nome completo</label>
         <input type="text" asp-for="Name" class="form-control">
+        @Html.ValidationMessageFor(x => x.Name)
     </div>
     <div class="mb-3">
-        <label for="Email" class="form-label">Digite seu e-mail: </label>
+        <label for="Email" class="form-label">Email</label>
         <input type="email" asp-for="Email" class="form-control">
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Celular</label>
+        <input type="number" asp-for="Phone" class="form-control">
+        @Html.ValidationMessageFor(x => x.Phone)
     </div>
     <button type="submit" asp-route-id="@Model.Id" class="btn btn-primary">Alterar</button>
-
 </form>

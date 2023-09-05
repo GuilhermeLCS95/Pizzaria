@@ -6,18 +6,23 @@
 }
 <form asp-controller="User" asp-action="Create" method="post">
     <div class="mb-3">
-        <label for="UserName" class="form-label">Digite seu nome: </label>
-        <input type="text" asp-for="Name" class="form-control">
+        <label for="UserName" class="form-label">Nome completo</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="Digite seu nome completo">
         @Html.ValidationMessageFor(x => x.Name)
     </div>
     <div class="mb-3">
-        <label for="Email" class="form-label">Digite seu e-mail: </label>
-        <input type="email" asp-for="Email" class="form-control">
+        <label for="Email" class="form-label"> E-mail </label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu e-mail">
         @Html.ValidationMessageFor(x => x.Email)
     </div>
     <div class="mb-3">
-        <label for="Password" class="form-label">Digite sua senha: </label>
-        <input type="password" asp-for="Password" class="form-control">
+        <label for="Phone" class="form-label">Celular </label>
+        <input type="number" asp-for="Phone" class="form-control" placeholder="Digite seu celular">
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Senha</label>
+        <input type="password" asp-for="Password" class="form-control" placeholder="Digite sua senha">
         @Html.ValidationMessageFor(x => x.Password)
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>

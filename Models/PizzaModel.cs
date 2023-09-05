@@ -1,5 +1,7 @@
-﻿using Pizzaria.Enums;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Pizzaria.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pizzaria.Models
 {
@@ -14,9 +16,10 @@ namespace Pizzaria.Models
         public SaltySweetEnum SaltySweetEnum { get; set; }
         [Required(ErrorMessage = "O campo tamanho da pizza é obrigatório")]
         public PizzaSizeEnum SizeEnum { get; set; }
+
         [Required(ErrorMessage = "O campo preço é obrigatório")]
-        [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
-        public double Price { get; set; }
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal Price { get; set; }
 
     }
 }
