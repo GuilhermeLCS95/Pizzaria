@@ -47,6 +47,7 @@ namespace Pizzaria.Repository
                 userDB.EditDate = DateTime.Now;
                 userDB.Name = user.Name;
                 userDB.Email = user.Email;
+                userDB.Phone = user.Phone;
                
                 _bancoContext.Users.Update(userDB);
                 _bancoContext.SaveChanges();
