@@ -1,10 +1,18 @@
 ﻿@model UserModel;
+@using Pizzaria.Enums;
 
 @{
     ViewData["Title"] = "Atualizar usuário";
 }
 <form asp-controller="User" asp-action="Update" method="post">
     <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <select class="form-select w-25" asp-for="AdminEnum">
+            <option value="@AdminEnum.Admin">Administrador</option>
+            <option value="@AdminEnum.Standard">Padrão</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.AdminEnum)
+    </div>
     <div class="mb-3">
         <label for="UserName" class="form-label">Nome completo</label>
         <input type="text" asp-for="Name" class="form-control">

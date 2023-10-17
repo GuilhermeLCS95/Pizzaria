@@ -45,6 +45,7 @@ namespace Pizzaria.Repository
             else
             {
                 userDB.EditDate = DateTime.Now;
+                userDB.AdminEnum = user.AdminEnum;
                 userDB.Name = user.Name;
                 userDB.Email = user.Email;
                 userDB.Phone = user.Phone;

@@ -60,6 +60,9 @@ namespace Pizzaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AdminEnum")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("EditDate")
                         .HasColumnType("datetime2");
 

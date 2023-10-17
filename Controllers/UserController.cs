@@ -87,6 +87,7 @@ namespace Pizzaria.Controllers
                     user = new UserModel()
                     {
                         Id = userWithoutPassword.Id,
+                        AdminEnum = userWithoutPassword.AdminEnum,
                         Name = userWithoutPassword.Name,
                         Email = userWithoutPassword.Email,
                         Phone = userWithoutPassword.Phone,
