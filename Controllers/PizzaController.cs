@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pizzaria.Filters;
 using Pizzaria.Models;
 using Pizzaria.Repository;
 using System.Linq.Expressions;
 
 namespace Pizzaria.Controllers
 {
+    [LoggedUser]
+    [AdminRestriction]
     public class PizzaController : Controller
-    {
+    {      
         private readonly IPizzaRepository _pizzaRepository;
         public PizzaController(IPizzaRepository pizzaRepository)
         {
