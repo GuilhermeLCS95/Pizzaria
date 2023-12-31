@@ -56,12 +56,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/Components/Menu/_LayoutUserSessionNull.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxfTGF5b3V0VXNlclNlc3Npb25OdWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/_LayoutEmpty.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRFbXB0eS5jc2h0bWw=
+[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -96,6 +96,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8fdrl6gios
 
-[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/_LayoutUnlogged.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVbmxvZ2dlZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = b-mt4gzk79sd
+[C:/Users/gui_f/source/repos/Pizzaria/Views/Shared/_LayoutNotLogged.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXROb3RMb2dnZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-556kjdbyq8

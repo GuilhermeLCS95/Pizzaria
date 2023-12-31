@@ -3,18 +3,18 @@ using Pizzaria.Filters;
 using Pizzaria.Models;
 using Pizzaria.Repository;
 using System.Linq.Expressions;
+using System.Web.Http;
 
 namespace Pizzaria.Controllers
 {
-    [LoggedUser]
-    [AdminRestriction]
     public class PizzaController : Controller
-    {      
+    {
         private readonly IPizzaRepository _pizzaRepository;
         public PizzaController(IPizzaRepository pizzaRepository)
         {
             _pizzaRepository = pizzaRepository;
         }
+
 
         public IActionResult Index()
         {
@@ -57,7 +57,8 @@ namespace Pizzaria.Controllers
             }
                        
         }
-        [HttpPost]
+
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult Create(PizzaModel pizza)
         {
             try
@@ -76,7 +77,7 @@ namespace Pizzaria.Controllers
                 return RedirectToAction("Index");
             }
         }
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult Update(PizzaModel pizza)
         {
             try

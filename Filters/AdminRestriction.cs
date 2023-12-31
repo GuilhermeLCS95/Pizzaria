@@ -10,6 +10,7 @@ namespace Pizzaria.Filters
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
+            
             string userSession = context.HttpContext.Session.GetString("userLogged");
             if (string.IsNullOrEmpty(userSession))
             {
@@ -29,6 +30,7 @@ namespace Pizzaria.Filters
                 }
             }
             base.OnActionExecuting(context);
+            
         }
     }
 }

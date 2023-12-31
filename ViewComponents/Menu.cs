@@ -11,7 +11,11 @@ namespace Pizzaria.ViewComponents
         {
             string userSession = HttpContext.Session.GetString("userLogged");
 
-            if (string.IsNullOrEmpty(userSession)) return null;
+            if (string.IsNullOrEmpty(userSession))
+            {
+                return View("_LayoutUserSessionNull");
+            }         
+
 
             UserModel user = JsonConvert.DeserializeObject<UserModel>(userSession);
            

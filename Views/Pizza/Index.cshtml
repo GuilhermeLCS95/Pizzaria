@@ -18,12 +18,10 @@
     </div>
 }
 <div class="text-center subtitle">
-    <p>Pizzas salgadas</p>
-</div>
-<div class="row">
-    @if(Model != null && Model.Any())
+    <p>Pizzas salgada</p>
+    @foreach (var pizzaSalgada in Model)
     {
-        foreach(var pizzaSalgada in Model)
+        @if (pizzaSalgada.SaltySweetEnum == Pizzaria.Enums.SaltySweetEnum.Salgada)
         {
             <div class="card" style="width: 15rem;" @pizzaSalgada.Id>
                 <img src="@pizzaSalgada.PizzaImg" class="card-img-top" alt="sabor pizza">
@@ -36,9 +34,29 @@
                     <a role="button" class="btn btn-primary" asp-route-id="@pizzaSalgada.Id" asp-controller="Pizza" asp-action="Update">Editar</a>
                     <a role="button" class="btn btn-danger" asp-route-id="@pizzaSalgada.Id" asp-controller="Pizza" asp-action="DeleteConfirmation">Excluir</a>
                 </div>
-                
             </div>
-            
+        }
+    }
+</div>
+
+<div class="text-center subtitle">
+    <p>Pizzas doce</p>
+    @foreach (var pizzaDoce in Model)
+    {
+        @if (pizzaDoce.SaltySweetEnum == Pizzaria.Enums.SaltySweetEnum.Doce)
+        {
+            <div class="card" style="width: 15rem;" @pizzaDoce.Id>
+                <img src="@pizzaDoce.PizzaImg" class="card-img-top" alt="sabor pizza">
+                <div class="card-body">
+                    <h5 class="card-title">@pizzaDoce.PizzaFlavor</h5>
+                    <span class="card-text">Tamanho: @pizzaDoce.SizeEnum</span>
+                    <p class="card-text">R$ @pizzaDoce.Price</p>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <a role="button" class="btn btn-primary" asp-route-id="@pizzaDoce.Id" asp-controller="Pizza" asp-action="Update">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-route-id="@pizzaDoce.Id" asp-controller="Pizza" asp-action="DeleteConfirmation">Excluir</a>
+                </div>
+            </div>
         }
     }
 </div>

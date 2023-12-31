@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pizzaria.Data;
+using Pizzaria.Filters;
 using Pizzaria.Helper;
 using Pizzaria.Repository;
 
@@ -21,6 +22,10 @@ builder.Services.AddSession(o =>
     o.Cookie.IsEssential = true;
 });
 
+builder.Services.AddControllersWithViews(o =>
+{
+    o.Filters.Add(new LayoutFilter());
+});
 
 
 var app = builder.Build();
@@ -44,6 +49,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

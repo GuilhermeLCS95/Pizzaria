@@ -55,6 +55,7 @@ namespace Pizzaria.Controllers
             }          
             
         }
+
         [HttpPost]
         public IActionResult Create(UserModel user)
         {
