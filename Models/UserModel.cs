@@ -1,4 +1,5 @@
 ﻿using Pizzaria.Enums;
+using Pizzaria.Helper;
 using System.ComponentModel.DataAnnotations;
 
 namespace Pizzaria.Models
@@ -31,6 +32,11 @@ namespace Pizzaria.Models
         public bool PasswordSearch(string password)
         {
             return Password == password;
+        }
+
+        public void SetPasswordHash()
+        {
+            Password = Password.GenerateHash();
         }
 
 

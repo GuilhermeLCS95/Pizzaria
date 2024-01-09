@@ -1,0 +1,32 @@
+﻿@model UserModel;
+@using Pizzaria.Enums;
+
+@{
+    ViewData["Title"] = "Atualizar dados";
+}
+
+<body id="login-body">
+    <div class="login-container">
+        <div class="login-wrapper">
+            <form asp-controller="Home" asp-action="Update" method="post">              
+                <h1>Atualizar</h1>              
+                <input type="hidden" asp-for="@Model.Id" />
+                <input type="hidden" asp-for="AdminEnum" value="@AdminEnum.Standard" />
+                @Html.ValidationMessageFor(x => x.AdminEnum)                         
+                <div class="input-box">
+                    <input type="text" asp-for="Name" class="form-control">
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="input-box">                  
+                    <input type="email" asp-for="Email" class="form-control">
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                <div class="input-box">
+                    <input type="number" asp-for="Phone" class="form-control">
+                    @Html.ValidationMessageFor(x => x.Phone)
+                </div>
+                <button type="submit" asp-route-id="@Model.Id" class="btn btn-primary">Alterar</button>
+            </form>
+        </div>
+    </div>
+</body>

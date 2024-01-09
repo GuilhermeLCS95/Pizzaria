@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Pizzaria.Filters;
 using Pizzaria.Models;
 using Pizzaria.Repository;
 using System.Linq.Expressions;
+using System.Web.Http;
 
 namespace Pizzaria.Controllers
 {
+    [AdminRestriction]
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -19,6 +22,7 @@ namespace Pizzaria.Controllers
             List<UserModel> users = _userRepository.GetAll();
             return View(users);
         }
+
         public IActionResult Create()
         {
             return View();
@@ -56,7 +60,7 @@ namespace Pizzaria.Controllers
             
         }
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult Create(UserModel user)
         {
             try
@@ -78,7 +82,7 @@ namespace Pizzaria.Controllers
         }
 
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult Update(UserWithoutPassword userWithoutPassword)
         {
             try

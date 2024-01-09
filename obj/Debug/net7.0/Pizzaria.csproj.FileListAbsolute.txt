@@ -77,4 +77,3 @@ C:\Users\gui_f\source\repos\Pizzaria\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\gui_f\source\repos\Pizzaria\bin\Debug\net7.0\System.Net.Http.Formatting.dll
 C:\Users\gui_f\source\repos\Pizzaria\bin\Debug\net7.0\System.Web.Http.dll
 C:\Users\gui_f\source\repos\Pizzaria\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
-C:\Users\gui_f\source\repos\Pizzaria\obj\Debug\net7.0\scopedcss\Views\Shared\_LayoutNotlogged.cshtml.rz.scp.css

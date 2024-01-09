@@ -2,14 +2,11 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 nav {
-    background: rgb(219,162,74);
-    background: linear-gradient(180deg, rgba(219,162,74,1) 22%, rgba(255,250,138,1) 100%);
-    !important;
+    background-color: #fff;
 }
 
 .navbar-brand {
-    color: #ce0000 !important;
-    font-family: 'Great Vibes', cursive !important;
+    
 }
 .bar-brand {
     white-space: normal;
@@ -94,8 +91,7 @@ button.accept-policy {
 footer {
     margin-top: auto;
     height: 4rem;
-    background: rgb(219,162,74);
-    background: linear-gradient(180deg, rgba(219,162,74,1) 22%, rgba(255,250,138,1) 100%);
+    background-color: #fff;
 }
     footer span{
         text-align: center;

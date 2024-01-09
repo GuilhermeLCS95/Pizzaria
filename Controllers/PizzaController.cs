@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace Pizzaria.Controllers
 {
+    [AdminRestriction]
     public class PizzaController : Controller
     {
         private readonly IPizzaRepository _pizzaRepository;
@@ -15,12 +16,12 @@ namespace Pizzaria.Controllers
             _pizzaRepository = pizzaRepository;
         }
 
-
         public IActionResult Index()
         {
             List<PizzaModel> pizzas = _pizzaRepository.GetAll();
             return View(pizzas);
         }
+
         public IActionResult Create()
         {
             return View();

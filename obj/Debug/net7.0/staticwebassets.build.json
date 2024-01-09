@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dZrZQp2JPG/6PhbnRWCO7akHrFPQoIumtge3MHpiX1g=",
+  "Hash": "bXnnZbb5OhHYTmO3vQpRL4aqjMDagTVxwOziXvO965U=",
   "Source": "Pizzaria",
   "BasePath": "_content/Pizzaria",
   "Mode": "Default",
@@ -85,6 +85,40 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_background.jpg",
+      "SourceId": "Pizzaria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\",
+      "BasePath": "_content/Pizzaria",
+      "RelativePath": "Images/pizza_background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\pizza_background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_background2.jpg",
+      "SourceId": "Pizzaria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\",
+      "BasePath": "_content/Pizzaria",
+      "RelativePath": "Images/pizza_background2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\pizza_background2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_banner.jpg",
       "SourceId": "Pizzaria",
       "SourceType": "Discovered",
@@ -117,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\pizza_banner_mobile.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza-welcome-view.png",
-      "SourceId": "Pizzaria",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\",
-      "BasePath": "_content/Pizzaria",
-      "RelativePath": "Images/pizza-welcome-view.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\pizza-welcome-view.png"
     },
     {
       "Identity": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\js\\site.js",

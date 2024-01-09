@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets\\Pizzaria.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza-welcome-view.png",
-      "PackagePath": "staticwebassets\\Images\\pizza-welcome-view.png"
+      "Id": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_background.jpg",
+      "PackagePath": "staticwebassets\\Images\\pizza_background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_background2.jpg",
+      "PackagePath": "staticwebassets\\Images\\pizza_background2.jpg"
     },
     {
       "Id": "C:\\Users\\gui_f\\source\\repos\\Pizzaria\\wwwroot\\Images\\pizza_banner.jpg",

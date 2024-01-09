@@ -6,6 +6,7 @@ namespace Pizzaria.Filters
 {
     public class LayoutFilter : IResultFilter
     {
+
         public void OnResultExecuted(ResultExecutedContext context)
         {
 
@@ -23,6 +24,6 @@ namespace Pizzaria.Filters
             }
         }
 
-        
+
     }
 }

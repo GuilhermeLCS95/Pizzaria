@@ -1,6 +1,5 @@
 ﻿@model LoginModel;
 @{
-    Layout = "_LayoutNotLogged";
     ViewData["Title"] = "Login";
 }
 
@@ -11,19 +10,28 @@
         @TempData["ErrorMessage"]
     </div>
 }
+<body id="login-body">
+    <div class="login-container">
+        <div class="login-wrapper">
+            <form asp-controller="Login" asp-action="Login" method="post">
+                <h1>Entrar</h1>
+                <div class="input-box">
+                    <input type="email" class="form-control" id="login" asp-for="Email" placeholder="Digite seu e-mail aqui">
+                    <i class='bx bx-envelope'></i>
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                <div class="input-box">
+                    <input type="password" class="form-control" id="senha" asp-for="Password" placeholder="Digite sua senha">
+                    <i class='bx bx-lock-alt'></i>
+                    @Html.ValidationMessageFor(x => x.Password)
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+                <div class="register-link">
+                    <p>Não tem uma conta?<a href="/Home/Create"> Registre-se</a></p>
+                </div>
 
-<form asp-controller="Login" asp-action="Login" method="post">
-    <div class="form-group">
-        <label for="login">E-mail</label>
-        <input type="email" class="form-control w-75" id="login" asp-for="Email" placeholder="Digite seu e-mail aqui">
-        @Html.ValidationMessageFor(x => x.Email)
-    </div>
-    <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" class="form-control w-75" id="senha" asp-for="Password" placeholder="Digite sua senha">
-        <small id="passwordHelp" class="form-text text-muted">Nunca compartilhe sua senha.</small>
-        @Html.ValidationMessageFor(x => x.Password)
-    </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
-    <p>Não tem uma conta? Registre-se <a href="/User/Create">aqui</a></p>
-</form>
+            </form>
+        </div>
+    </div>   
+</body>
+
