@@ -29,6 +29,7 @@ namespace Pizzaria.Models
         public DateTime RegisterDate { get; set; }
         public DateTime? EditDate { get; set; }
 
+        public ICollection<CartModel> Carts { get; set; }
         public bool PasswordSearch(string password)
         {
             return Password == password;

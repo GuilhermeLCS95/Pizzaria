@@ -21,5 +21,6 @@ namespace Pizzaria.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
 
+        public ICollection<PurchaseListModel> Purchases { get; set;}
     }
 }
